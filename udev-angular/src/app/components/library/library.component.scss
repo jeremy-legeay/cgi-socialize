@@ -1,6 +1,46 @@
-.card {
-  min-width: 300px;
-  max-width: 300px;
-  display: inline-block;
-  margin: 20px;
+#articles-wrapper {
+  display: flex;
+  max-width: 1280px;
+  width: 100%;
+  margin: auto; padding: 1rem 0 0;
+  flex-wrap: wrap;
+
+  .card {
+    display: flex;
+    width: 100%;
+    max-width: calc(33% - 2rem);
+    margin: 1rem;
+    flex-direction: column;
+
+    .mat-card-actions {
+      display: flex;
+      margin-top: auto;
+    }
+
+    button {
+      .mat-icon {
+        display: inline-flex;
+        margin-left: 0.5rem;
+        margin-right: -0.5rem;
+        font-size: 0.9rem;
+        align-items: center;
+      }
+    }
+
+    .mat-card-footer {
+      display: flex;
+      .comment_number {
+        display: flex;
+        margin-left: auto;
+        padding: 0 0.5rem 0.5rem;
+        align-items: center;
+        color: #707070;
+
+        span {
+          margin: 0 0.25rem 0 0;
+        }
+      }
+    }
+  }
 }
+

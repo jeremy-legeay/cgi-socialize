@@ -1,6 +1,35 @@
+<div id="articles-wrapper">
+
+  <mat-card class="card" *ngFor="let article of (library | async)">
+    <mat-card-header>
+      <mat-card-title>{{article.title}}</mat-card-title>
+      <mat-card-subtitle>{{article.author.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/img/articles/{{article.image}}.jpg" alt="Photo number {{article.image}}">
+    <mat-card-content>
+      {{ (article.message.length>75)? (article.message | slice:0:75)+'...':(article.message) }}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [routerLink]="['/articles', article.id]">
+        <span>Lire la suite</span>
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <div class="comment_number">
+        <span>34</span>
+        <mat-icon>comment</mat-icon>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+
+</div>
+
+<!--
 <mat-card class="card" *ngFor="let article of (library | async)">
   <mat-card-header>
     <mat-card-title>{{article.title}}</mat-card-title>
+    <img mat-card-image src="asset/img/articles/1.jpg" alt="Photo number 1">
   </mat-card-header>
   <mat-card-content>{{article.message}}</mat-card-content>
   <mat-card-subtitle>{{article.author.name}}</mat-card-subtitle>
@@ -8,3 +37,4 @@
     <button mat-raised-button color="primary" [routerLink]="['/articles', article.id]">Voir</button>
   </mat-card-actions>
 </mat-card>
+-->
