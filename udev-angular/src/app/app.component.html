@@ -1,4 +1,57 @@
 <mat-toolbar color="primary">
+
+    <span id="btn__home" routerLink="/" *ngIf="!loginService.isUserLoggedIn()">Socializa</span>
+    <span id="btn__home" routerLink="/library" *ngIf="loginService.isUserLoggedIn()">Socializa</span>
+
+<!--  <button mat-button routerLink="/library" *ngIf="loginService.isUserLoggedIn()">-->
+<!--    <mat-icon>home</mat-icon>-->
+<!--    <span>Socializa</span>-->
+<!--  </button>-->
+
+  <span class="spacer"></span>
+
+
+  <button mat-button [matMenuTriggerFor]="mainmenu" *ngIf="loginService.isUserLoggedIn()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #mainmenu="matMenu">
+    <button mat-menu-item routerLink="/library" *ngIf="loginService.isUserLoggedIn()">
+      <mat-icon>ballot</mat-icon>
+      <span>List of articles</span>
+    </button>
+    <button mat-menu-item routerLink="/register" *ngIf="loginService.isUserLoggedIn()">
+      <mat-icon>library_add</mat-icon>
+      <span>Add article</span>
+    </button>
+
+    <button id="btn__logout" mat-menu-item routerLink="/logout" *ngIf="loginService.isUserLoggedIn()">
+      <mat-icon>block</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+
+
+    <!--
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voicemail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+-->
+</mat-toolbar>
+
+<div id="global-wrapper">
+
+  <router-outlet></router-outlet>
+
+</div>
+
+
+<!--<mat-toolbar color="primary">
   <span>Socializa</span>
   <span class="spacer"></span>
   <button *ngIf="!loginService.isUserLoggedIn()" routerLink="/login">Se connecter</button>
@@ -9,4 +62,4 @@
 </mat-toolbar>
 <div class="container" >
   <router-outlet></router-outlet>
-</div>
+</div>-->

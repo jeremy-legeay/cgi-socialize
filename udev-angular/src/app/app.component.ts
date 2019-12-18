@@ -1,17 +1,24 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from './services/authentication.service';
+import {Location} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngu-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
-  constructor(private loginService: AuthenticationService) {
+  constructor(private location: Location, private router: Router, private loginService: AuthenticationService) {
   }
 
   ngOnInit() {
-
+    if (!this.loginService.isUserLoggedIn() && location.pathname !== '/' ) {
+      this.router.navigate(['/']);
+    }
+    if ( this.loginService.isUserLoggedIn() && location.pathname === '/' ) {
+      this.router.navigate(['/library']);
+    }
   }
 }

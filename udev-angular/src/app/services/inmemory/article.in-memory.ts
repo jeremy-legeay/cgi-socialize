@@ -1,3 +1,4 @@
+/*
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -39,3 +40,4 @@ export class ArticleInMemory implements ArticleRepository {
       );
   }
 }
+*/
