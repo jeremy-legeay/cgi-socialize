@@ -1,0 +1,12 @@
+<mat-tab-group dynamicHeight *ngFor="let user of (listeUser | async)">
+  <mat-tab label="Short tab">
+    <div class="example-small-box mat-elevation-z4">
+      Personnes connectés
+    </div>
+  </mat-tab>
+  <mat-tab label="Long tab">
+    <div class="example-large-box mat-elevation-z4">
+      {{ user.name }}
+    </div>
+  </mat-tab>
+</mat-tab-group>

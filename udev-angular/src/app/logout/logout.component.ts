@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../services/authentication.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from '../services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngu-logout',
@@ -17,7 +17,7 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit() {
     this.authentocationService.logOut();
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
   }
 
 }

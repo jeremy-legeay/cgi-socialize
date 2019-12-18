@@ -15,7 +15,8 @@ export class ArticleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private articleService: ArticleRepository
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {

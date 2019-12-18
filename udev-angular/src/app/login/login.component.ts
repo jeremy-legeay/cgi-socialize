@@ -9,9 +9,9 @@ import {AuthenticationService} from '../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  username = 'Udev'
-  password = ''
-  invalidLogin = false
+  username = 'Udev';
+  password = '';
+  invalidLogin = false;
 
   constructor(private router: Router,
               private loginservice: AuthenticationService) {
@@ -23,10 +23,10 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     if (this.loginservice.authenticate(this.username, this.password)
     ) {
-      this.router.navigate(['/library'])
-      this.invalidLogin = false
+      this.router.navigate(['/library']);
+      this.invalidLogin = false;
     } else
-      this.invalidLogin = true
+      this.invalidLogin = true;
   }
 
 }

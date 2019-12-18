@@ -10,7 +10,7 @@ export class AuthenticationService {
 
   authenticate(username, password) {
     if (username === 'Udev' && password === 'password') {
-      sessionStorage.setItem('username', username)
+      sessionStorage.setItem('username', username);
       return true;
     } else {
       return false;

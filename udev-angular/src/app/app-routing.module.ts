@@ -5,15 +5,16 @@ import {LibraryComponent} from './components/library/library.component';
 import {RegisterComponent} from './components/register/register.component';
 import {LoginComponent} from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
-import {ListeUserComponent} from './components/liste-user/liste-user.component';
+import {ListeComponent} from './components/liste/liste.component';
+import {AuthGaurdService} from './services/auth-gaurd.service';
 
 const routes: Routes = [
-  {path: 'library', component: LibraryComponent},
-  {path: 'articles/:id', component: ArticleComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'library', component: LibraryComponent, canActivate: [AuthGaurdService]},
+  {path: 'articles/:id', component: ArticleComponent, canActivate: [AuthGaurdService]},
+  {path: 'register', component: RegisterComponent, canActivate: [AuthGaurdService]},
   {path: '', component: LoginComponent},
-  {path: 'logout', component: LogoutComponent},
-  {path: 'liste-user', component: ListeUserComponent},
+  {path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService]},
+  {path: 'user', component: ListeComponent},
 ];
 
 @NgModule({

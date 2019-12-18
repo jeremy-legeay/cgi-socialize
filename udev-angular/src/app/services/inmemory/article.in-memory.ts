@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+/*import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {ArticleRepository} from '../article.repository';
@@ -38,4 +38,4 @@ export class ArticleInMemory implements ArticleRepository {
         map(subjects => subjects.filter(subject => subject.id === id)[0])
       );
   }
-}
+}*/

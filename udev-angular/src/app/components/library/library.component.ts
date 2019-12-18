@@ -13,7 +13,8 @@ export class LibraryComponent implements OnInit {
 
   constructor(
     private articleService: ArticleRepository
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.library = this.articleService.all();

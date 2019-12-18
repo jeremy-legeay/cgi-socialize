@@ -1,7 +1,14 @@
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatSnackBarModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatInputModule,
+  MatSnackBarModule,
+  MatToolbarModule
+} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -12,9 +19,10 @@ import {LibraryComponent} from './components/library/library.component';
 import {RegisterComponent} from './components/register/register.component';
 import {ArticleRepository} from './services/article.repository';
 import {ArticleService} from './services/real/article.service';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
-import { ListeUserComponent } from './components/liste-user/liste-user.component';
+import {LoginComponent} from './login/login.component';
+import {LogoutComponent} from './logout/logout.component';
+import {ListeComponent} from './components/liste/liste.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -24,7 +32,7 @@ import { ListeUserComponent } from './components/liste-user/liste-user.component
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-    ListeUserComponent
+    ListeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,11 +46,13 @@ import { ListeUserComponent } from './components/liste-user/liste-user.component
     MatIconModule,
     MatInputModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule
   ],
   providers: [
     {provide: ArticleRepository, useFactory: (http: HttpClient) => new ArticleService(http), deps: [HttpClient]}
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}

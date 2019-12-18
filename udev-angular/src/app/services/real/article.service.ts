@@ -9,7 +9,8 @@ import {ArticleRepository} from '../article.repository';
 export class ArticleService implements ArticleRepository {
   private url: string = environment.api + '/articles';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   add(article: Article): Observable<Article> {
     return this.http.post<Article>(this.url, article);
