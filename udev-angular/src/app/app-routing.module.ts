@@ -7,6 +7,7 @@ import {LoginComponent} from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
 import {UserComponent} from './components/user/user.component';
 import {AuthGaurdService} from './services/auth-gaurd.service';
+import {CommentaireComponent} from './components/commentaire/commentaire.component';
 
 const routes: Routes = [
   {path: 'library', component: LibraryComponent, canActivate: [AuthGaurdService]},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService]},
   {path: 'users', component: UserComponent, canActivate: [AuthGaurdService]},
+  {path: 'commentaires', component: CommentaireComponent, canActivate: [AuthGaurdService]},
 ];
 
 @NgModule({

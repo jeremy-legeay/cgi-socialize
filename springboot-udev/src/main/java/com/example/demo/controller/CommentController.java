@@ -21,7 +21,7 @@ import java.util.List;
 @Api(tags = {"Comment"})
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping(value = "comments", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "commentaires", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CommentController {
 
 

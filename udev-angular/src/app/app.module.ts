@@ -25,6 +25,9 @@ import {UserComponent} from './components/user/user.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {UserRepository} from './services/user.repository';
 import {UserService} from './services/real/user.service';
+import {CommentaireComponent} from './components/commentaire/commentaire.component';
+import {CommentaireRepository} from './services/commentaire.repository';
+import {CommentaireService} from './services/real/commentaire.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import {UserService} from './services/real/user.service';
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-    UserComponent
+    UserComponent,
+    CommentaireComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,8 @@ import {UserService} from './services/real/user.service';
   ],
   providers: [
     {provide: ArticleRepository, useFactory: (http: HttpClient) => new ArticleService(http), deps: [HttpClient]},
-    {provide: UserRepository, useFactory: (http: HttpClient) => new UserService(http), deps: [HttpClient]}
+    {provide: UserRepository, useFactory: (http: HttpClient) => new UserService(http), deps: [HttpClient]},
+    {provide: CommentaireRepository, useFactory: (http: HttpClient) => new CommentaireService(http), deps: [HttpClient]}
   ],
   bootstrap: [AppComponent]
 })

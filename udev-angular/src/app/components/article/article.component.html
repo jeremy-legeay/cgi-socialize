@@ -10,9 +10,7 @@
   </h3>
   <p>{{a.message}}</p>
   <p>{{a.author}}</p>
-  <div *ngFor="let comment of (commentList | async)">
-    <p>{{comment.message}}</p>
-  </div>
+  <ngu-commentaire></ngu-commentaire>
   <button mat-raised-button color="primary" title="" routerLink="/article">
     Repondre
   </button>
