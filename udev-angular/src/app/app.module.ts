@@ -21,8 +21,10 @@ import {ArticleRepository} from './services/article.repository';
 import {ArticleService} from './services/real/article.service';
 import {LoginComponent} from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
-import {ListeComponent} from './components/liste/liste.component';
+import {UserComponent} from './components/user/user.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {UserRepository} from './services/user.repository';
+import {UserService} from './services/real/user.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-    ListeComponent
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTabsModule
   ],
   providers: [
-    {provide: ArticleRepository, useFactory: (http: HttpClient) => new ArticleService(http), deps: [HttpClient]}
+    {provide: ArticleRepository, useFactory: (http: HttpClient) => new ArticleService(http), deps: [HttpClient]},
+    {provide: UserRepository, useFactory: (http: HttpClient) => new UserService(http), deps: [HttpClient]}
   ],
   bootstrap: [AppComponent]
 })

@@ -16,7 +16,7 @@ import java.util.List;
 @Api(tags = {"User"})
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping(value = "users", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "user", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
     @Resource

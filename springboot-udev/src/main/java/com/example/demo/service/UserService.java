@@ -34,8 +34,9 @@ public class UserService {
         return userMapper.mapTo(u);
     }
 
-    public UserJSON addUser(UserJSON user) {
+    // AJOUT D UN USER
+    /*public UserJSON addUser(UserJSON user) {
         User u = userRepository.save(userMapper.mapTo(user));
         return userMapper.mapTo(u);
-    }
+    }*/
 }

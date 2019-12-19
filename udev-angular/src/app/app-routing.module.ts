@@ -5,7 +5,7 @@ import {LibraryComponent} from './components/library/library.component';
 import {RegisterComponent} from './components/register/register.component';
 import {LoginComponent} from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
-import {ListeComponent} from './components/liste/liste.component';
+import {UserComponent} from './components/user/user.component';
 import {AuthGaurdService} from './services/auth-gaurd.service';
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent, canActivate: [AuthGaurdService]},
   {path: '', component: LoginComponent},
   {path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService]},
-  {path: 'user', component: ListeComponent},
+  {path: 'user', component: UserComponent, canActivate: [AuthGaurdService]},
 ];
 
 @NgModule({
