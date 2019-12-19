@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../services/authentication.service';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'ngu-login',
@@ -9,9 +10,16 @@ import {AuthenticationService} from '../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  username = 'Udev';
-  password = '';
+  username = ''
+  password = ''
   invalidLogin = false;
+
+  usernameFormControl = new FormControl('',[
+    Validators.required
+  ]);
+  passwordFormControl = new FormControl('',[
+    Validators.required
+  ]);
 
   constructor(private router: Router,
               private loginservice: AuthenticationService) {
@@ -21,12 +29,12 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate(['/library']);
+    if (this.loginservice.authenticate(this.username, this.password) ) {
+      this.router.navigate(['/library'])
       this.invalidLogin = false;
-    } else
+    } else {
       this.invalidLogin = true;
+    }
   }
 
 }

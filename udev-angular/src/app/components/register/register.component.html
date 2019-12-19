@@ -1,19 +1,110 @@
-<button mat-raised-button color="accent" title="back" routerLink="/">
-  Retour
-</button>
+<div class="flexbox jc-center">
 
-<form class="article-form" [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)" method="post">
+  <form class="article-form" [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)" method="post">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Login Form
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input matInput type="text" placeholder="Title of new article..." name="title" formControlName="title" [(ngModel)]="title" [formControl]="titleFormControl">
+          <mat-error *ngIf="titleFormControl.hasError('required')">
+            Title is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="string" placeholder="Image" formControlName="image">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Message</mat-label>
+          <textarea matInput placeholder="Type your message here..." name="message" formControlName="message" [(ngModel)]="message" [formControl]="messageFormControl"></textarea>
+          <mat-error *ngIf="messageFormControl.hasError('required')">
+            Message is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field formGroupName="author">
+          <input matInput type="number" placeholder="Type autor id" formControlName="id">
+        </mat-form-field>
+
+        <!--          <mat-form-field>-->
+        <!--            <mat-label>Favorite food</mat-label>-->
+        <!--            <mat-select>-->
+        <!--              <mat-option *ngFor="let food of foods" [value]="food.value">-->
+        <!--                {{food.viewValue}}-->
+        <!--              </mat-option>-->
+        <!--            </mat-select>-->
+        <!--          </mat-form-field>-->
+
+      </mat-card-content>
+      <mat-card-actions class="flexbox jc-center">
+        <button mat-raised-button color="primary" type="submit">Ajouter</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </form>
+</div>
+
+
+
+<!--<p>-->
+<!--  <mat-form-field>-->
+<!--    <mat-label>Username</mat-label>-->
+<!--    <input matInput type="text" placeholder="Enter your username..." name="username" [(ngModel)]="username" [formControl]="usernameFormControl">-->
+<!--    <mat-icon matSuffix>person</mat-icon>-->
+<!--    <mat-error *ngIf="usernameFormControl.hasError('required')">-->
+<!--      Username is <strong>required</strong>-->
+<!--    </mat-error>-->
+<!--  </mat-form-field>-->
+<!--</p>-->
+<!--<p>-->
+<!--  <mat-form-field>-->
+<!--    <mat-label>Password</mat-label>-->
+<!--    <input matInput type="password" placeholder="Enter your password..." name="password" [(ngModel)]="password" [formControl]="passwordFormControl">-->
+<!--    <mat-icon matSuffix>lock</mat-icon>-->
+<!--    <mat-error *ngIf="passwordFormControl.hasError('required')">-->
+<!--      Password is <strong>required</strong>-->
+<!--    </mat-error>-->
+<!--  </mat-form-field>-->
+<!--</p>-->
+
+
+<!--
+<div class="container">
+  <div>
+    User Name : <input type="text" name="username" [(ngModel)]="username">
+    Password : <input type="password" name="password" [(ngModel)]="password">
+  </div>
+</div>-->
+
+
+
+
+
+
+
+
+<!--<button mat-raised-button color="accent" title="back" routerLink="">-->
+<!--  Retour-->
+<!--</button>-->
+
+<!--<form class="article-form" [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)" method="post">
   <mat-form-field class="article-field-full-width">
     <input matInput id="title" type="text" placeholder="Titre" formControlName="title">
   </mat-form-field>
   <mat-form-field class="article-field-full-width">
-    <!--<input matInput id="message" type="text" placeholder="Contenu" formControlName="message">-->
+    &lt;!&ndash;<input matInput id="message" type="text" placeholder="Contenu" formControlName="message">&ndash;&gt;
     <textarea matInput id="message" placeholder="Contenu" formControlName="message"></textarea>
 
   </mat-form-field>
-  <!--récupération du nom de l'auteur automatique-->
+  <!-récupération du nom de l'auteur automatique--
   <mat-form-field class="article-field-full-width" formGroupName="author">
     <input matInput id="author" type="number" placeholder="Auteur" formControlName="id">
   </mat-form-field>
   <button mat-raised-button color="primary" type="submit">Ajouter</button>
-</form>
+</form>-->

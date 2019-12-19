@@ -6,6 +6,7 @@ import {
   MatCardModule,
   MatIconModule,
   MatInputModule,
+  MatMenuModule,
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -49,6 +50,7 @@ import {UserService} from './services/real/user.service';
     MatInputModule,
     MatSnackBarModule,
     FormsModule,
+    MatMenuModule,
     MatTabsModule
   ],
   providers: [

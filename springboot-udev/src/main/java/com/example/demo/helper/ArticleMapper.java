@@ -16,6 +16,7 @@ public class ArticleMapper {
         Article a = new Article();
         // must not set id !
         a.setTitle(articleJSON.getTitle());
+        a.setImage(articleJSON.getImage());
         a.setMessage(articleJSON.getMessage());
         a.setAuthor(articleJSON.getAuthor().getId());
         return a;
@@ -25,6 +26,7 @@ public class ArticleMapper {
         Assert.notNull(article, "The article must not be null");
         ArticleJSON aJSON = new ArticleJSON();
         aJSON.setTitle(article.getTitle());
+        aJSON.setImage(article.getImage());
         aJSON.setMessage(article.getMessage());
         aJSON.setId(article.getId());
         return aJSON;

@@ -14,6 +14,8 @@ public class ArticleJSON implements Serializable {
     @NotEmpty
     private String title;
     @NotEmpty
+    private String image;
+    @NotEmpty
     private String message;
 
     private UserJSON author;
