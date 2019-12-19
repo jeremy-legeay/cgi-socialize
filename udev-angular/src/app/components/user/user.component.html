@@ -1,12 +1,20 @@
-<!--<mat-tab-group dynamicHeight>
-  &lt;!&ndash;<mat-tab>
-    <div class="example-small-box mat-elevation-z4">
-      Personnes connectés
-    </div>
-  </mat-tab>&ndash;&gt;
-  <mat-tab label="Personnes connectées">
+<!--mat-tab-group>
+  <mat-tab>
     <div class="example-small-box mat-elevation-z4" *ngFor="let user of (listeUser | async)">
       {{ user.name }}
     </div>
   </mat-tab>
 </mat-tab-group>-->
+<!--<div class="example-small-box mat-elevation-z4" *ngFor="let user of (listeUser | async)">
+  {{ user.name }}
+</div>-->
+
+<nav id="usersList">
+  <button id="btn_toggleList" (click)="toggleUsersList()">Online members</button>
+  <div id="to_slide" *ngIf="visible" [@slideToggle]>
+    <ul *ngFor="let user of (listeUser | async)">
+      <li>{{ user.name }}</li>
+    </ul>
+  </div>
+</nav>
+
