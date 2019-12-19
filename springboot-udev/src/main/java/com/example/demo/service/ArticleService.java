@@ -54,8 +54,8 @@ public class ArticleService {
         return articleMapper.mapTo(a);
     }
 
-    public ArticleJSON addArticle(ArticleJSON subject) {
-        Article a = articleRepository.save(articleMapper.mapTo(subject));
+    public ArticleJSON addArticle(ArticleJSON article) {
+        Article a = articleRepository.save(articleMapper.mapTo(article));
         return articleMapper.mapTo(a);
     }
 

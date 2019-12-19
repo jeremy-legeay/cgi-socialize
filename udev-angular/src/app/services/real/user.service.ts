@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 
 @Injectable()
 export class UserService implements UserRepository {
-  private url: string = environment.api + '/user';
+  private url: string = environment.api + '/users';
 
   constructor(private http: HttpClient) {
   }

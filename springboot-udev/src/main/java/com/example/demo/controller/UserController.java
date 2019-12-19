@@ -13,10 +13,10 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Slf4j
-@Api(tags = {"User"})
+@Api(tags = {"Users"})
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping(value = "user", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "users", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
     @Resource
