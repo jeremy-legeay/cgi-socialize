@@ -1,4 +1,4 @@
-<button mat-raised-button color="accent" title="back" routerLink="/">
+<button mat-raised-button color="accent" title="back" routerLink="/library">
   Retour
 </button>
 
@@ -10,7 +10,10 @@
   </h3>
   <p>{{a.message}}</p>
   <p>{{a.author}}</p>
-  <button mat-raised-button color="primary" title="back" routerLink="">
+  <div *ngFor="let comment of (commentList | async)">
+    <p>{{comment.message}}</p>
+  </div>
+  <button mat-raised-button color="primary" title="" routerLink="/article">
     Repondre
   </button>
 </div>

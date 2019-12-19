@@ -11,6 +11,7 @@ import {ArticleRepository} from '../../services/article.repository';
 })
 export class ArticleComponent implements OnInit {
   article: Observable<Article>;
+  commentList: Observable<Comment>;
 
   constructor(
     private route: ActivatedRoute,

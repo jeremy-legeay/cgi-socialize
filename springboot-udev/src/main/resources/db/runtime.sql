@@ -15,3 +15,7 @@ INSERT INTO public.article(id, title, message, author) VALUES (5, 'Rebelle
 INSERT INTO public.article(id, title, message, author) VALUES (6, 'Big Boss bientôt', 'Je voudrais passer VP voir plus', 6);
 INSERT INTO public.article(id, title, message, author) VALUES (7, 'Mes lunettes ?', 'Je dois faire le front mais où sont mes lunettes, je ne les trouve plus', 7);
 INSERT INTO public.article(id, title, message, author) VALUES (8, 'Pika ?', 'Pika pika pika pikachu', 8);
+
+INSERT INTO public.comment(id, message, author, article) VALUES (1, 'Comment 1', 1, 1);
+INSERT INTO public.comment(id, message, author, article) VALUES (2, 'Comment 2', 2, 1);
+INSERT INTO public.comment(id, message, author, article) VALUES (3, 'Comment 3', 1, 2);
