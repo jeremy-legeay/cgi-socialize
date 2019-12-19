@@ -26,6 +26,8 @@ import {UserComponent} from './components/user/user.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {UserRepository} from './services/user.repository';
 import {UserService} from './services/real/user.service';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import {UserService} from './services/real/user.service';
     MatSnackBarModule,
     FormsModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     {provide: ArticleRepository, useFactory: (http: HttpClient) => new ArticleService(http), deps: [HttpClient]},

@@ -10,6 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 #btn__home {
   cursor: pointer;
 }
+
 #btn__logout {
   * {
     color: #b71c1c;
@@ -17,13 +18,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
   &:hover {
     background-color: rgba(183, 28, 28, 0.06);
-    /** {
-      color: white;
-    }*/
   }
 }
 
 #global-wrapper {
+  display: flex;
+
+  #content-wrapper {
+    width: 100%;
+  }
+
+  #memberList {
+    width: 200px;
+  }
+
   .flexbox {
     display: flex;
 

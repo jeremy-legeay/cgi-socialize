@@ -24,7 +24,7 @@ export class LogoutComponent implements OnInit {
   }
   private openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
-      duration: 2000,
+      duration: 500,
     }).afterDismissed().subscribe(null, null, () => {
       this.router.navigate(['/']);
     });

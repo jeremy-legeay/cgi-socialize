@@ -62,7 +62,7 @@ export class RegisterComponent implements OnInit {
 
   private openSnackBar(message: string) {
     this.snackBar.open(message, 'Redirection', {
-      duration: 2000,
+      duration: 500,
     }).afterDismissed().subscribe(null, null, () => {
       this.router.navigate(['/library']);
     });
