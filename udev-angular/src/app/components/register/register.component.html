@@ -12,8 +12,8 @@
 
   </mat-form-field>
   <!--récupération du nom de l'auteur automatique-->
-  <mat-form-field class="article-field-full-width">
-    <input matInput id="author" type="number" placeholder="Auteur" formControlName="author">
+  <mat-form-field class="article-field-full-width" formGroupName="author">
+    <input matInput id="author" type="number" placeholder="Auteur" formControlName="id">
   </mat-form-field>
   <button mat-raised-button color="primary" type="submit">Ajouter</button>
 </form>

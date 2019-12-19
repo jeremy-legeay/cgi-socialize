@@ -1,6 +1,5 @@
 package com.example.demo.pojo;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
@@ -16,7 +15,7 @@ public class ArticleJSON implements Serializable {
     private String title;
     @NotEmpty
     private String message;
-    @NotEmpty
+
     private UserJSON author;
 
 }

@@ -20,7 +20,9 @@ export class RegisterComponent implements OnInit {
     this.articleForm = this.formBuilder.group({
       title: '',
       message: '',
-      author: ''
+      author: this.formBuilder.group({
+        id: ''
+      })
     });
   }
 
@@ -28,6 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(data: Article) {
+    console.log(data);
     if (this.isFormComplete(data)) {
       this.articleService.add(data)
         .subscribe(() => {
