@@ -2,14 +2,14 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>
-        Login Form
+        Identifiez vous
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <p>
         <mat-form-field>
-          <mat-label>Username</mat-label>
-          <input matInput type="text" placeholder="Enter your username..." name="username" [(ngModel)]="username" [formControl]="usernameFormControl">
+          <mat-label>Identifiant</mat-label>
+          <input matInput type="text" placeholder="Entrez votre nom..." name="username" [(ngModel)]="username" [formControl]="usernameFormControl">
           <mat-icon matSuffix>person</mat-icon>
           <mat-error *ngIf="usernameFormControl.hasError('required')">
             Username is <strong>required</strong>
@@ -18,18 +18,18 @@
       </p>
       <p>
         <mat-form-field>
-          <mat-label>Password</mat-label>
-          <input matInput type="password" placeholder="Enter your password..." name="password" [(ngModel)]="password" [formControl]="passwordFormControl">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput type="password" placeholder="Entrez votre mot de passe..." name="password" [(ngModel)]="password" [formControl]="passwordFormControl">
           <mat-icon matSuffix>lock</mat-icon>
           <mat-error *ngIf="passwordFormControl.hasError('required')">
-            Password is <strong>required</strong>
+            Mot de passe <strong>required</strong>
           </mat-error>
         </mat-form-field>
       </p>
     </mat-card-content>
     <mat-card-actions class="flexbox jc-center">
       <button mat-raised-button color="primary" (click)=checkLogin() class="btn btn-success">
-        Login
+        Connexion
       </button>
     </mat-card-actions>
   </mat-card>

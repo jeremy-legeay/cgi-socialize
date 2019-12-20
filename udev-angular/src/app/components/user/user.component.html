@@ -10,7 +10,7 @@
 </div>-->
 
 <nav id="usersList">
-  <button id="btn_toggleList" (click)="toggleSlide()">Online members</button>
+  <button id="btn_toggleList" (click)="toggleSlide()">Membres en ligne</button>
   <div id="to_slide" *ngIf="visible" [@slideToggle]>
     <ul *ngFor="let user of (listeUser | async)">
       <li>{{ user.name }}</li>

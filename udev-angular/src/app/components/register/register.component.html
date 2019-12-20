@@ -4,15 +4,15 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          Login Form
+          Nouvel Article
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <mat-form-field>
           <mat-label>Title</mat-label>
-          <input matInput type="text" placeholder="Title of new article..." name="title" formControlName="title" [(ngModel)]="title" [formControl]="titleFormControl">
+          <input matInput type="text" placeholder="Titre du nouvel article..." name="title" formControlName="title" [(ngModel)]="title" [formControl]="titleFormControl">
           <mat-error *ngIf="titleFormControl.hasError('required')">
-            Title is <strong>required</strong>
+            Titre <strong>required</strong>
           </mat-error>
         </mat-form-field>
 
@@ -22,14 +22,14 @@
 
         <mat-form-field>
           <mat-label>Message</mat-label>
-          <textarea matInput placeholder="Type your message here..." name="message" formControlName="message" [(ngModel)]="message" [formControl]="messageFormControl"></textarea>
+          <textarea matInput placeholder="Tapez votre message..." name="message" formControlName="message" [(ngModel)]="message" [formControl]="messageFormControl"></textarea>
           <mat-error *ngIf="messageFormControl.hasError('required')">
-            Message is <strong>required</strong>
+            Message <strong>required</strong>
           </mat-error>
         </mat-form-field>
 
         <mat-form-field formGroupName="author">
-          <input matInput type="number" placeholder="Type autor id" formControlName="id">
+          <input matInput type="number" placeholder="Entrez votre ID" formControlName="id">
         </mat-form-field>
 
         <!--          <mat-form-field>-->

@@ -13,16 +13,16 @@
   <mat-menu #mainmenu="matMenu">
     <button mat-menu-item routerLink="/library" *ngIf="loginService.isUserLoggedIn()">
       <mat-icon>ballot</mat-icon>
-      <span>List of articles</span>
+      <span>Liste d'articles</span>
     </button>
     <button mat-menu-item routerLink="/register" *ngIf="loginService.isUserLoggedIn()">
       <mat-icon>library_add</mat-icon>
-      <span>Add article</span>
+      <span>Ajouter un article</span>
     </button>
 
     <button id="btn__logout" mat-menu-item routerLink="/logout" *ngIf="loginService.isUserLoggedIn()">
       <mat-icon>block</mat-icon>
-      <span>Logout</span>
+      <span>Deconnexion</span>
     </button>
   </mat-menu>
 

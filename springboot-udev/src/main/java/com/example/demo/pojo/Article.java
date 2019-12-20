@@ -2,10 +2,7 @@ package com.example.demo.pojo;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 //see https://fxrobin.developpez.com/tutoriels/java/lombok-retour-experience/
 @Data
@@ -17,6 +14,7 @@ public class Article {
     private Long id;
     private String title;
     private String image;
+    @Column(length = 3000)
     private String message;
     private Long author;
 }

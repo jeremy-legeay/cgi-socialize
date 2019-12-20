@@ -23,7 +23,7 @@
   <mat-card class="card" *ngIf="article | async as a">
     <mat-card-header>
       <mat-card-title>{{a.title}}</mat-card-title>
-      <mat-card-subtitle><span>Author:</span> {{a.author.name}}</mat-card-subtitle>
+      <mat-card-subtitle><span>Auteur :</span> {{a.author.name}}</mat-card-subtitle>
     </mat-card-header>
     <div id="card-image">
       <img mat-card-image src="assets/img/articles/{{a.image}}.jpg" alt="Photo number {{a.image}}">
@@ -35,11 +35,11 @@
     </mat-card-footer>
   </mat-card>
 
-  <h3>Comment :</h3>
+  <h3>Commentaire :</h3>
 
   <ngu-commentaire></ngu-commentaire>
   <button mat-icon-button color="accent" routerLink="">
-    Add comment
+    Ajouter un commentaire
   </button>
 </div>
 
