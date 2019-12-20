@@ -7,4 +7,6 @@ export abstract class ArticleRepository {
   abstract all(): Observable<Article[]>;
 
   abstract byId(id: string): Observable<Article>;
+
+  // abstract commentList(id: string): Observable<Comment[]>;
 }

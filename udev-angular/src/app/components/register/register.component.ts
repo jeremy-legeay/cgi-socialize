@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import {Article} from '../../models/article';
 import {ArticleRepository} from '../../services/article.repository';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngu-register',
@@ -12,13 +13,28 @@ import {ArticleRepository} from '../../services/article.repository';
 export class RegisterComponent implements OnInit {
   articleForm: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private snackBar: MatSnackBar,
-    private articleService: ArticleRepository
-  ) {
+  title = '';
+  image = '';
+  message = '';
+  author = '';
+
+  titleFormControl = new FormControl('',[
+    Validators.required
+  ]);
+  imageFormControl = new FormControl('',[
+    Validators.required
+  ]);
+  messageFormControl = new FormControl('',[
+    Validators.required
+  ]);
+  authorFormControl = new FormControl('',[
+    Validators.required
+  ]);
+
+  constructor(private formBuilder: FormBuilder, private snackBar: MatSnackBar, private router: Router, private articleService: ArticleRepository ) {
     this.articleForm = this.formBuilder.group({
       title: '',
+      image: '',
       message: '',
       author: this.formBuilder.group({
         id: ''
@@ -45,8 +61,10 @@ export class RegisterComponent implements OnInit {
   }
 
   private openSnackBar(message: string) {
-    this.snackBar.open(message, 'Super!', {
-      duration: 5000,
+    this.snackBar.open(message, 'Redirection', {
+      duration: 500,
+    }).afterDismissed().subscribe(null, null, () => {
+      this.router.navigate(['/library']);
     });
   }
 

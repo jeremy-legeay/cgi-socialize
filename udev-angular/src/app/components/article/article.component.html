@@ -1,17 +1,45 @@
-<button mat-raised-button color="accent" title="back" routerLink="/library">
-  Retour
-</button>
+<!--<button mat-raised-button color="accent" title="back" routerLink="/library">-->
+<!--  Retour-->
+<!--</button>-->
 
-<div *ngIf="article | async as a">
-  <h3>
-    <a [title]="a.id + ' - ' + a.title">
-      {{a.title}}
-    </a>
-  </h3>
-  <p>{{a.message}}</p>
-  <p>{{a.author}}</p>
+<!--<div *ngIf="article | async as a">-->
+<!--  <h3>-->
+<!--    <a [title]="a.id + ' - ' + a.title">-->
+<!--      {{a.title}}-->
+<!--    </a>-->
+<!--  </h3>-->
+<!--  <p>{{a.message}}</p>-->
+<!--  <p>{{a.author}}</p>-->
+<!--  <ngu-commentaire></ngu-commentaire>-->
+<!--  <button mat-raised-button color="primary" title="" routerLink="/article">-->
+<!--    Repondre-->
+<!--  </button>-->
+<!--</div>-->
+
+<div id="article-wrapper">
+  <button mat-button color="accent" title="back" routerLink="/library">
+    Retour
+  </button>
+  <mat-card class="card" *ngIf="article | async as a">
+    <mat-card-header>
+      <mat-card-title>{{a.title}}</mat-card-title>
+      <mat-card-subtitle><span>Author:</span> {{a.author.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <div id="card-image">
+      <img mat-card-image src="assets/img/articles/{{a.image}}.jpg" alt="Photo number {{a.image}}">
+    </div>
+    <mat-card-content>
+      {{a.message}}
+    </mat-card-content>
+    <mat-card-footer>
+    </mat-card-footer>
+  </mat-card>
+
+  <h3>Comment :</h3>
+
   <ngu-commentaire></ngu-commentaire>
-  <button mat-raised-button color="primary" title="" routerLink="/article">
-    Repondre
+  <button mat-icon-button color="accent" routerLink="">
+    Add comment
   </button>
 </div>
+

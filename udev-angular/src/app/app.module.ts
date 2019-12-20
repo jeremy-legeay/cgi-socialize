@@ -6,6 +6,7 @@ import {
   MatCardModule,
   MatIconModule,
   MatInputModule,
+  MatMenuModule,
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -28,6 +29,8 @@ import {UserService} from './services/real/user.service';
 import {CommentaireComponent} from './components/commentaire/commentaire.component';
 import {CommentaireRepository} from './services/commentaire.repository';
 import {CommentaireService} from './services/real/commentaire.service';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import {CommentaireService} from './services/real/commentaire.service';
     MatInputModule,
     MatSnackBarModule,
     FormsModule,
-    MatTabsModule
+    MatMenuModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     {provide: ArticleRepository, useFactory: (http: HttpClient) => new ArticleService(http), deps: [HttpClient]},

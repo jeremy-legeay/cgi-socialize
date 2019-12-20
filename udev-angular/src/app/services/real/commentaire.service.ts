@@ -19,4 +19,8 @@ export class CommentaireService implements CommentaireRepository {
   all(): Observable<Commentaire[]> {
     return this.http.get<Commentaire[]>(this.url);
   }
+
+  byArticleId(article: string): Observable<Commentaire[]> {
+    return this.http.get<Commentaire[]>(`${this.url}/${article}`);
+  }
 }

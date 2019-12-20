@@ -1,14 +1,41 @@
 <mat-toolbar color="primary">
-  <span>Socializa</span>
+
+  <span id="btn__home" routerLink="/" *ngIf="!loginService.isUserLoggedIn()">Socializa</span>
+  <span id="btn__home" routerLink="/library" *ngIf="loginService.isUserLoggedIn()">Socializa</span>
+
   <span class="spacer"></span>
-  <button *ngIf="!loginService.isUserLoggedIn()" routerLink="/login">Se connecter</button>
-  <button *ngIf="loginService.isUserLoggedIn()" routerLink="/logout">Se déconnecter</button>
-  <button mat-mini-fab *ngIf="loginService.isUserLoggedIn()" routerLink="/register">
-    <mat-icon aria-hidden="false" aria-label="Add article">add</mat-icon>
+
+
+  <button mat-button [matMenuTriggerFor]="mainmenu" *ngIf="loginService.isUserLoggedIn()">
+    <mat-icon>menu</mat-icon>
   </button>
+
+  <mat-menu #mainmenu="matMenu">
+    <button mat-menu-item routerLink="/library" *ngIf="loginService.isUserLoggedIn()">
+      <mat-icon>ballot</mat-icon>
+      <span>List of articles</span>
+    </button>
+    <button mat-menu-item routerLink="/register" *ngIf="loginService.isUserLoggedIn()">
+      <mat-icon>library_add</mat-icon>
+      <span>Add article</span>
+    </button>
+
+    <button id="btn__logout" mat-menu-item routerLink="/logout" *ngIf="loginService.isUserLoggedIn()">
+      <mat-icon>block</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+
 </mat-toolbar>
 
-<div class="container" >
-  <router-outlet></router-outlet>
-  <ngu-user></ngu-user>
+<div id="global-wrapper">
+
+  <div id="content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+  <div id="memberList" *ngIf="loginService.isUserLoggedIn()">
+    <ngu-user></ngu-user>
+  </div>
+
 </div>
+

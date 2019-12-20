@@ -5,4 +5,6 @@ export abstract class CommentaireRepository {
   abstract add(commentaire: Commentaire): Observable<Commentaire>;
 
   abstract all(): Observable<Commentaire[]>;
+
+  abstract byArticleId(article: string): Observable<Commentaire[]>;
 }

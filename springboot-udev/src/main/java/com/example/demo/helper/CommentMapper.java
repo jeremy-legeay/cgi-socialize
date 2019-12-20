@@ -19,7 +19,7 @@ public class CommentMapper {
         // must not set id !
         a.setMessage(commentJSON.getMessage());
         a.setAuthor(commentJSON.getAuthor().getId());
-        a.setArticle(commentJSON.getArticle().getId());
+        a.setArticle(commentJSON.getArticle());
         return a;
     }
 
@@ -27,6 +27,7 @@ public class CommentMapper {
         Assert.notNull(comment, "The comment must not be null");
         CommentJSON aJSON = new CommentJSON();
         aJSON.setMessage(comment.getMessage());
+        aJSON.setArticle(comment.getArticle());
         aJSON.setId(comment.getId());
         return aJSON;
     }

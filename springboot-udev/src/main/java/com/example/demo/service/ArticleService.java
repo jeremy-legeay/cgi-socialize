@@ -51,7 +51,14 @@ public class ArticleService {
     public ArticleJSON getArticleById(long id) {
         log.info("Called for getArticleById ...");
         Article a = articleRepository.getOne(id);
-        return articleMapper.mapTo(a);
+
+        User user = userRepository.getOne(a.getAuthor());
+        UserJSON userJSON = userMapper.mapTo(user);
+
+        ArticleJSON articleJSONS = articleMapper.mapTo(a);
+        articleJSONS.setAuthor(userJSON);
+
+        return articleJSONS;
     }
 
     public ArticleJSON addArticle(ArticleJSON article) {

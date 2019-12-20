@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 public class ArticleJSON implements Serializable {
@@ -15,9 +14,10 @@ public class ArticleJSON implements Serializable {
     @NotEmpty
     private String title;
     @NotEmpty
+    private String image;
+    @NotEmpty
     private String message;
 
     private UserJSON author;
-    private List<CommentJSON> commentList;
 
 }

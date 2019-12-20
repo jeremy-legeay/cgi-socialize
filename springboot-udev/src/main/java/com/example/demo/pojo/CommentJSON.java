@@ -10,8 +10,6 @@ public class CommentJSON implements Serializable {
     private Long id;
     @NotEmpty
     private String message;
-    @NotEmpty
     private UserJSON author;
-    @NotEmpty
-    private ArticleJSON article;
+    private Long article;
 }

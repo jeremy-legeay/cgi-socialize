@@ -1,1 +1,52 @@
+#article-wrapper {
+  display: flex;
+  max-width: 1080px;
+  width: 100%;
+  margin: auto;
+  padding: 1rem 0 0;
+  flex-wrap: wrap;
+
+  .card {
+    display: flex;
+    width: 100%;
+    margin: 1rem;
+    flex-direction: column;
+
+    .mat-card-title {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .mat-card-subtitle {
+      span {
+        color: #BBB;
+      }
+    }
+
+    #card-image {
+      display: flex;
+      overflow: hidden;
+      height: 100px;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  h3 {
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+
+  ngu-commentaire {
+    width: 100%;
+    margin: 0 1rem;
+  }
+
+  .mat-icon-button {
+    margin-left: auto;
+    margin-right: 5rem;
+  }
+
+}
 

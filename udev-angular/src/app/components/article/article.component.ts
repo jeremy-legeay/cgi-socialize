@@ -11,6 +11,7 @@ import {ArticleRepository} from '../../services/article.repository';
 })
 export class ArticleComponent implements OnInit {
   article: Observable<Article>;
+  // comment: Observable<Comment[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +22,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.article = this.articleService.byId(params.get('id'));
+      // this.comment = this.articleService.commentList(params.get('id'));
     });
   }
 

@@ -1,18 +1,28 @@
-.example-small-box, .example-large-box {
+
+.commentList {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 15px;
-  padding: 5px;
-  border-radius: 8px;
-}
+  width: 100%;
+  flex-direction: column;
 
-.example-small-box {
-  height: 15px;
-  width: 100px;
-}
+  .card {
+    display: flex;
+    width: 100%;
+    margin: 0 0 0.5rem;
+    padding: 0.5rem 1rem;
+    flex-direction: column;
 
-.example-large-box {
-  height: 300px;
-  width: 300px;
+    .mat-card-title {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .mat-card-content {
+      margin-bottom: 0.25rem;
+    }
+
+    .mat-card-footer {
+      padding: 0 1rem;
+    }
+  }
+
 }
